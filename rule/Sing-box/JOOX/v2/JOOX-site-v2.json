@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "rules": [
+    {
+      "domain": [
+        "i-joox.com",
+        "joox.com",
+        "sanook.com"
+      ],
+      "domain_suffix": [
+        ".i-joox.com",
+        ".joox.com",
+        ".sanook.com"
+      ]
+    }
+  ]
+}

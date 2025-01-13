@@ -1,0 +1,17 @@
+{
+  "version": 3,
+  "rules": [
+    {
+      "domain": [
+        "p-cdn.us",
+        "sndcdn.com",
+        "soundcloud.com"
+      ],
+      "domain_suffix": [
+        ".p-cdn.us",
+        ".sndcdn.com",
+        ".soundcloud.com"
+      ]
+    }
+  ]
+}

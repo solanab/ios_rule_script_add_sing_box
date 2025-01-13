@@ -1,0 +1,17 @@
+{
+  "version": 3,
+  "rules": [
+    {
+      "domain": [
+        "alibaba",
+        "taobao",
+        "tmall"
+      ],
+      "domain_suffix": [
+        ".alibaba",
+        ".taobao",
+        ".tmall"
+      ]
+    }
+  ]
+}
