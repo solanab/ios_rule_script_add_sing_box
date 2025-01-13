@@ -1,0 +1,142 @@
+name: Copy Rules to Sing-box
+
+on:
+  push:
+    branches:
+      - feature/sing
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  copy-rules:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        
+      - name: Sparse Checkout Source Rules
+        run: |
+          git init source-rules
+          cd source-rules
+          git remote add origin https://github.com/blackmatrix7/ios_rule_script.git
+          git config core.sparseCheckout true
+          echo "rule/Loon/*" >> .git/info/sparse-checkout
+          git pull origin master
+      
+      - name: Setup Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: '1.22.1'
+
+      - name: Install sing-rules-converter
+        run: |
+          go install github.com/solanab/sing-rules-converter/v3@v3.0.3
+          echo "${HOME}/go/bin" >> $GITHUB_PATH
+
+      - name: Copy Rules and Convert
+        shell: /usr/bin/bash -e {0}
+        run: |
+          # 验证安装
+          which sing-rules-converter
+          sing-rules-converter --version || true
+
+          # 创建基础目录
+          mkdir -p rule/Sing-box
+
+          # 处理单个文件的转换
+          convert_file() {
+            local file_path="$1"
+            local version="$2"
+            
+            # 执行转换
+            "${HOME}/go/bin/sing-rules-converter" "$file_path" -m -v="$version"
+            "${HOME}/go/bin/sing-rules-converter" "$file_path" -v="$version"
+          }
+          export -f convert_file
+
+          # 检查目录中是否存在 .list 文件
+          has_list_files() {
+            local dir="$1"
+            local count=$(find "$dir" -maxdepth 1 -name "*.list" | wc -l)
+            [ "$count" -gt 0 ]
+          }
+          export -f has_list_files
+
+          process_single_directory() {
+            local dir="$1"
+            local base_name=$(basename "$dir")
+            local target_dir="rule/Sing-box/$base_name"
+
+            # 创建目标目录和版本目录
+            mkdir -p "${target_dir}/v1" "${target_dir}/v2" "${target_dir}/v3"
+
+            # 复制 README
+            if [ -f "${dir}/README.md" ]; then
+              cp "${dir}/README.md" "${target_dir}/"
+            fi
+
+            # 复制并转换规则文件
+            if has_list_files "$dir"; then
+              for version in 1 2 3; do
+                # 复制文件
+                cp "${dir}"/*.list "${target_dir}/v${version}/"
+                
+                # 转换每个 .list 文件
+                find "${target_dir}/v${version}" -name "*.list" -type f | while read list_file; do
+                  convert_file "$list_file" "$version"
+                done
+              done
+            fi
+
+            # 处理子目录
+            find "$dir" -type d -not -path "*/v[123]" -not -path "$dir" | while read subdir; do
+              rel_path=${subdir#$dir}
+              target_subdir="${target_dir}/${rel_path}"
+              
+              mkdir -p "${target_subdir}/v1" "${target_subdir}/v2" "${target_subdir}/v3"
+              
+              if [ -f "${subdir}/README.md" ]; then
+                cp "${subdir}/README.md" "${target_subdir}/"
+              fi
+              
+              if has_list_files "$subdir"; then
+                for version in 1 2 3; do
+                  # 复制文件
+                  cp "${subdir}"/*.list "${target_subdir}/v${version}/"
+                  
+                  # 转换每个 .list 文件
+                  find "${target_subdir}/v${version}" -name "*.list" -type f | while read list_file; do
+                    convert_file "$list_file" "$version"
+                  done
+                done
+              fi
+            done
+          }
+          export -f process_single_directory
+
+          # 使用 GNU Parallel 并行处理所有目录
+          find source-rules/rule/Loon -maxdepth 1 -mindepth 1 -type d | \
+            parallel --will-cite -j $(nproc) process_single_directory
+
+      - name: Configure Git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Commit and Force Push Changes
+        run: |
+          git add rule/Sing-box
+          
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+
+          git commit -m "Update Sing-box rules $(date +'%Y-%m-%d %H:%M:%S')"
+          git push --force origin feature/sing
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
