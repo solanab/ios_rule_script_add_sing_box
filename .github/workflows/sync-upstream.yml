@@ -2,20 +2,26 @@ name: Sync Upstream and Update Rules
 
 on:
   schedule:
-    - cron: "*/30 * * * *"  # 每30分钟检查一次
+    - cron: "0 */2 * * *"
   workflow_dispatch:
+  repository_dispatch:
+    types: [sync_upstream]
 
 permissions:
   contents: write
+  actions: write
+  checks: write
 
 jobs:
   sync-and-update:
+    if: github.repository == 'solanab/ios_rule_script_add_sing_box'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          token: ${{ secrets.PAT_TOKEN }}
           
       - name: Configure Git
         run: |
@@ -37,6 +43,9 @@ jobs:
           LOCAL_HASH=$(git rev-parse origin/master)
           if [ "$UPSTREAM_HASH" != "$LOCAL_HASH" ]; then
             echo "updates_available=true" >> $GITHUB_OUTPUT
+            echo "Found new updates from upstream"
+          else
+            echo "No updates available"
           fi
           
       - name: Sync Master Branch
@@ -59,6 +68,13 @@ jobs:
             echo "Push failed"
             exit 1
           }
+          
+      - name: Trigger Copy Rules Workflow
+        if: steps.check.outputs.updates_available == 'true'
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.PAT_TOKEN }}
+          event-type: sync_upstream
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
