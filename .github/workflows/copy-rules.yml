@@ -1,9 +1,9 @@
 name: Copy Rules to Sing-box
 
 on:
-  push:
-    branches:
-      - feature/sing
+  # push:
+  #   branches:
+  #     - feature/sing
   workflow_dispatch:
   repository_dispatch:
     types: [sync_upstream]
