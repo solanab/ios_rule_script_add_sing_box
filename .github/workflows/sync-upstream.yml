@@ -48,11 +48,16 @@ jobs:
           echo "Debug: UPSTREAM_HASH=$UPSTREAM_HASH"
           echo "Debug: LOCAL_HASH=$LOCAL_HASH"
           
-          if [ "$UPSTREAM_HASH" != "$LOCAL_HASH" ]; then
+          # if [ "$UPSTREAM_HASH" != "$LOCAL_HASH" ]; then
+          #   echo "updates_available=true" >> $GITHUB_OUTPUT
+          #   echo "Debug: Found updates from upstream"
+          # else
+          #   echo "Debug: No updates available"
+          # fi
+
+          if [ true ]; then  # 临时修改，用于测试
             echo "updates_available=true" >> $GITHUB_OUTPUT
-            echo "Debug: Found updates from upstream"
-          else
-            echo "Debug: No updates available"
+            echo "Debug: Forcing update for testing"
           fi
           
       - name: Sync Master Branch
