@@ -38,13 +38,21 @@ jobs:
       - name: Check for Updates
         id: check
         run: |
+          echo "Debug: Fetching current state..."
+          git fetch upstream
+          git fetch origin
+          
           UPSTREAM_HASH=$(git rev-parse upstream/master)
           LOCAL_HASH=$(git rev-parse origin/master)
+          
+          echo "Debug: UPSTREAM_HASH=$UPSTREAM_HASH"
+          echo "Debug: LOCAL_HASH=$LOCAL_HASH"
+          
           if [ "$UPSTREAM_HASH" != "$LOCAL_HASH" ]; then
             echo "updates_available=true" >> $GITHUB_OUTPUT
-            echo "Found new updates from upstream"
+            echo "Debug: Found updates from upstream"
           else
-            echo "No updates available"
+            echo "Debug: No updates available"
           fi
           
       - name: Sync Master Branch
@@ -70,10 +78,15 @@ jobs:
           
       - name: Trigger Copy Rules Workflow
         if: steps.check.outputs.updates_available == 'true'
-        uses: peter-evans/repository-dispatch@v3
-        with:
-          token: ${{ secrets.PAT_TOKEN }}
-          event-type: sync_upstream
+        run: |
+          echo "Debug: Preparing to trigger copy-rules workflow"
+          echo "Debug: updates_available=${steps.check.outputs.updates_available}"
+          
+          # 使用 repository-dispatch action
+          uses: peter-evans/repository-dispatch@v3
+          with:
+            token: ${{ secrets.PAT_TOKEN }}
+            event-type: sync_upstream
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
