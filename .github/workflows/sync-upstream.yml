@@ -87,7 +87,7 @@ jobs:
         with:
           token: ${{ secrets.PAT_TOKEN }}
           repository: ${{ github.repository }}
-          event-type: sync_upstream
+          event-type: start_copy_rules
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
