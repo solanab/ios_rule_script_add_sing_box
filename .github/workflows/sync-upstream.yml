@@ -33,6 +33,7 @@ jobs:
       - name: Fetch Upstream Changes
         run: |
           git fetch upstream
+          git fetch origin
           
       - name: Check for Updates
         id: check
@@ -49,14 +50,14 @@ jobs:
       - name: Sync Master Branch
         if: steps.check.outputs.updates_available == 'true'
         run: |
-          git checkout master
+          git checkout -b master origin/master
           git merge upstream/master
           git push origin master
           
       - name: Sync Feature Branch
         if: steps.check.outputs.updates_available == 'true'
         run: |
-          git checkout feature/sing || git checkout -b feature/sing
+          git checkout feature/sing || git checkout -b feature/sing origin/master
           git merge master || {
             echo "Merge conflict occurred"
             git merge --abort
