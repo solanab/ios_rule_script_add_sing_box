@@ -1,8 +1,6 @@
 name: Sync Upstream and Update Rules
 
 on:
-  schedule:
-    - cron: "*/15 * * * *"
   workflow_dispatch:
   repository_dispatch:
     types: [sync_upstream]
@@ -14,9 +12,7 @@ permissions:
 
 jobs:
   sync-and-update:
-    if: |
-      github.repository == 'solanab/ios_rule_script_add_sing_box' && 
-      (github.event_name != 'schedule' || github.repository_owner == 'solanab')
+    if: github.repository == 'solanab/ios_rule_script_add_sing_box'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
