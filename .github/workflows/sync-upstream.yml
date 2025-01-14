@@ -83,15 +83,10 @@ jobs:
           
       - name: Trigger Copy Rules Workflow
         if: steps.check.outputs.updates_available == 'true'
-        run: |
-          echo "Debug: Preparing to trigger copy-rules workflow"
-          echo "Debug: updates_available=${steps.check.outputs.updates_available}"
-          
-          # 使用 repository-dispatch action
-          uses: peter-evans/repository-dispatch@v3
-          with:
-            token: ${{ secrets.PAT_TOKEN }}
-            event-type: sync_upstream
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.PAT_TOKEN }}
+          event-type: sync_upstream
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}

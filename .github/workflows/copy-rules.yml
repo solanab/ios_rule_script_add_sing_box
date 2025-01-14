@@ -5,8 +5,8 @@ on:
   #   branches:
   #     - feature/sing
   workflow_dispatch:
-  repository_dispatch:
-    types: [sync_upstream]
+  # repository_dispatch:
+  #   types: [sync_upstream]
 
 permissions:
   contents: write
