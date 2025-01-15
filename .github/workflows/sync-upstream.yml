@@ -1,0 +1,90 @@
+name: Sync Upstream and Update Rules
+
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types: [sync_upstream]
+  schedule:
+    - cron: "0 19 * * *" 
+permissions:
+  contents: write
+  actions: write
+  checks: write
+
+jobs:
+  sync-and-update:
+    if: github.repository == 'solanab/ios_rule_script_add_sing_box'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.PAT_TOKEN }}
+          
+      - name: Configure Git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          
+      - name: Add Upstream Remote
+        run: |
+          git remote add upstream https://github.com/blackmatrix7/ios_rule_script.git
+          
+      - name: Fetch Upstream Changes
+        run: |
+          git fetch upstream
+          git fetch origin
+          
+      - name: Check for Updates
+        id: check
+        run: |
+          echo "Debug: Fetching current state..."
+          git fetch upstream
+          git fetch origin
+          
+          UPSTREAM_HASH=$(git rev-parse upstream/master)
+          LOCAL_HASH=$(git rev-parse origin/master)
+          
+          echo "Debug: UPSTREAM_HASH=$UPSTREAM_HASH"
+          echo "Debug: LOCAL_HASH=$LOCAL_HASH"
+          
+          if [ "$UPSTREAM_HASH" != "$LOCAL_HASH" ]; then
+            echo "updates_available=true" >> $GITHUB_OUTPUT
+            echo "Debug: Found updates from upstream"
+          else
+            echo "Debug: No updates available"
+          fi
+          
+      - name: Sync Master Branch
+        if: steps.check.outputs.updates_available == 'true'
+        run: |
+          git checkout -b master origin/master
+          git merge upstream/master
+          git push origin master
+          
+      - name: Sync Feature Branch
+        if: steps.check.outputs.updates_available == 'true'
+        run: |
+          git checkout feature/sing || git checkout -b feature/sing origin/master
+          git merge master || {
+            echo "Merge conflict occurred"
+            git merge --abort
+            exit 1
+          }
+          git push origin feature/sing || {
+            echo "Push failed"
+            exit 1
+          }
+          
+      - name: Trigger Copy Rules Workflow
+        if: steps.check.outputs.updates_available == 'true'
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.PAT_TOKEN }}
+          repository: ${{ github.repository }}
+          event-type: start_copy_rules
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
