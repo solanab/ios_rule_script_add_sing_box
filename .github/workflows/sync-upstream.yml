@@ -66,13 +66,13 @@ jobs:
       - name: Sync Feature Branch
         if: steps.check.outputs.updates_available == 'true'
         run: |
-          git checkout feature/sing || git checkout -b feature/sing origin/master
+          git checkout sing-box || git checkout -b sing-box origin/master
           git merge master || {
             echo "Merge conflict occurred"
             git merge --abort
             exit 1
           }
-          git push origin feature/sing || {
+          git push origin sing-box || {
             echo "Push failed"
             exit 1
           }
