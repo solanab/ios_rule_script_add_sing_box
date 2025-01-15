@@ -1,0 +1,17 @@
+{
+  "version": 3,
+  "rules": [
+    {
+      "domain": [
+        "bootcdn.cn",
+        "bootcss.com",
+        "phpcomposer.com"
+      ],
+      "domain_suffix": [
+        ".bootcdn.cn",
+        ".bootcss.com",
+        ".phpcomposer.com"
+      ]
+    }
+  ]
+}

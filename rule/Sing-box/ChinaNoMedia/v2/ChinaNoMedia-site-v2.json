@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "rules": [
+    {
+      "domain": [
+        "cn",
+        "ms"
+      ],
+      "domain_suffix": [
+        ".cn",
+        ".ms"
+      ]
+    }
+  ]
+}
