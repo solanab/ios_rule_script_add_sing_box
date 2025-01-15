@@ -4,7 +4,8 @@ on:
   workflow_dispatch:
   repository_dispatch:
     types: [sync_upstream]
-
+  schedule:
+    - cron: "0 19 * * *" 
 permissions:
   contents: write
   actions: write
