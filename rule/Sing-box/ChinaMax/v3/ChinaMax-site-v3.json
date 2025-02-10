@@ -9,7 +9,6 @@
         "alibaba",
         "baidu",
         "citic",
-        "icbc",
         "sohu",
         "taobao",
         "tmall",
@@ -45,7 +44,8 @@
         "xn--vhquv",
         "xn--vuq861b",
         "xn--xhq521b",
-        "xn--zfr164b"
+        "xn--zfr164b",
+        "icbc"
       ],
       "domain_suffix": [
         ".alipay",
@@ -54,7 +54,6 @@
         ".alibaba",
         ".baidu",
         ".citic",
-        ".icbc",
         ".sohu",
         ".taobao",
         ".tmall",
@@ -90,7 +89,8 @@
         ".xn--vhquv",
         ".xn--vuq861b",
         ".xn--xhq521b",
-        ".xn--zfr164b"
+        ".xn--zfr164b",
+        ".icbc"
       ]
     }
   ]
