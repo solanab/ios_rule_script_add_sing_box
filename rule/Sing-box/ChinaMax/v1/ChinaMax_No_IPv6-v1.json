@@ -3,10 +3,10 @@
   "rules": [
     {
       "domain": [
-        "alipay",
         "cn",
         "ms",
         "alibaba",
+        "alipay",
         "baidu",
         "citic",
         "sohu",
@@ -48,10 +48,10 @@
         "icbc"
       ],
       "domain_suffix": [
-        ".alipay",
         ".cn",
         ".ms",
         ".alibaba",
+        ".alipay",
         ".baidu",
         ".citic",
         ".sohu",
