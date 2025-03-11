@@ -9,7 +9,6 @@
         "alipay",
         "baidu",
         "citic",
-        "icbc",
         "sohu",
         "taobao",
         "tmall",
@@ -45,7 +44,8 @@
         "xn--vhquv",
         "xn--vuq861b",
         "xn--xhq521b",
-        "xn--zfr164b"
+        "xn--zfr164b",
+        "icbc"
       ],
       "domain_suffix": [
         ".cn",
@@ -54,7 +54,6 @@
         ".alipay",
         ".baidu",
         ".citic",
-        ".icbc",
         ".sohu",
         ".taobao",
         ".tmall",
@@ -90,7 +89,8 @@
         ".xn--vhquv",
         ".xn--vuq861b",
         ".xn--xhq521b",
-        ".xn--zfr164b"
+        ".xn--zfr164b",
+        ".icbc"
       ],
       "ip_cidr": [
         "0.0.0.0/32",
@@ -7615,6 +7615,7 @@
         "43.231.144.0/20",
         "43.231.160.0/20",
         "43.231.176.0/21",
+        "43.231.184.0/24",
         "43.231.186.0/24",
         "43.231.32.0/20",
         "43.231.80.0/20",
