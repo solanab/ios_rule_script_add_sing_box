@@ -8,6 +8,7 @@
         "cn",
         "ms",
         "citic",
+        "icbc",
         "sohu",
         "unicom",
         "wang",
@@ -41,8 +42,7 @@
         "xn--vhquv",
         "xn--vuq861b",
         "xn--xhq521b",
-        "xn--zfr164b",
-        "icbc"
+        "xn--zfr164b"
       ],
       "domain_suffix": [
         ".alibaba",
@@ -50,6 +50,7 @@
         ".cn",
         ".ms",
         ".citic",
+        ".icbc",
         ".sohu",
         ".unicom",
         ".wang",
@@ -83,8 +84,7 @@
         ".xn--vhquv",
         ".xn--vuq861b",
         ".xn--xhq521b",
-        ".xn--zfr164b",
-        ".icbc"
+        ".xn--zfr164b"
       ],
       "ip_cidr": [
         "0.0.0.0/32",
@@ -20375,6 +20375,7 @@
         "2a0e:aa06:4e0::/44",
         "2a0e:aa06:500::/44",
         "2a0e:aa06:520::/48",
+        "2a0e:aa06:525::/48",
         "2a0e:aa06:541::/48",
         "2a0e:aa06::/40",
         "2a0e:aa07:e01b::/48",
