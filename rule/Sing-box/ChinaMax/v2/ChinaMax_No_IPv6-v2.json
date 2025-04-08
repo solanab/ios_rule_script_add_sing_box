@@ -3,15 +3,16 @@
   "rules": [
     {
       "domain": [
+        "alibaba",
+        "taobao",
+        "tmall",
         "cn",
         "ms",
-        "alibaba",
         "alipay",
         "baidu",
         "citic",
+        "icbc",
         "sohu",
-        "taobao",
-        "tmall",
         "unicom",
         "wang",
         "xn--1qqw23a",
@@ -44,19 +45,19 @@
         "xn--vhquv",
         "xn--vuq861b",
         "xn--xhq521b",
-        "xn--zfr164b",
-        "icbc"
+        "xn--zfr164b"
       ],
       "domain_suffix": [
+        ".alibaba",
+        ".taobao",
+        ".tmall",
         ".cn",
         ".ms",
-        ".alibaba",
         ".alipay",
         ".baidu",
         ".citic",
+        ".icbc",
         ".sohu",
-        ".taobao",
-        ".tmall",
         ".unicom",
         ".wang",
         ".xn--1qqw23a",
@@ -89,8 +90,7 @@
         ".xn--vhquv",
         ".xn--vuq861b",
         ".xn--xhq521b",
-        ".xn--zfr164b",
-        ".icbc"
+        ".xn--zfr164b"
       ],
       "ip_cidr": [
         "0.0.0.0/32",
@@ -1174,6 +1174,7 @@
         "103.215.32.0/21",
         "103.215.44.0/22",
         "103.215.48.0/22",
+        "103.215.80.0/22",
         "103.216.108.0/22",
         "103.216.136.0/22",
         "103.216.152.0/22",
@@ -7811,6 +7812,7 @@
         "44.31.81.0/24",
         "44.32.143.0/24",
         "44.32.188.0/24",
+        "44.32.192.0/24",
         "45.10.172.0/22",
         "45.11.76.0/22",
         "45.112.132.0/22",
