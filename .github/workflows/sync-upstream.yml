@@ -59,23 +59,27 @@ jobs:
       - name: Sync Master Branch
         if: steps.check.outputs.updates_available == 'true'
         run: |
-          git checkout -b master origin/master
-          git merge upstream/master
-          git push origin master
+          git checkout master || git checkout -b master
+          # Force sync with upstream to avoid merge conflicts
+          git reset --hard upstream/master
+          git push origin master --force
+          echo "Master branch force synced with upstream"
           
       - name: Sync Feature Branch
         if: steps.check.outputs.updates_available == 'true'
         run: |
-          git checkout sing-box || git checkout -b sing-box origin/master
-          git merge master || {
-            echo "Merge conflict occurred"
-            git merge --abort
-            exit 1
+          git checkout sing-box || git checkout -b sing-box origin/sing-box
+          # Try to merge master, if conflicts occur, use master version for rule files
+          git merge master -X theirs || {
+            echo "Merge conflict detected, resolving by accepting upstream changes for rules"
+            # Reset to current state and selectively update
+            git reset --hard HEAD
+            # Update only the rule directory from master
+            git checkout master -- rule/
+            git add rule/
+            git commit -m "Update rules from upstream master" || echo "No changes to commit"
           }
-          git push origin sing-box || {
-            echo "Push failed"
-            exit 1
-          }
+          git push origin sing-box --force-with-lease
           
       - name: Trigger Copy Rules Workflow
         if: steps.check.outputs.updates_available == 'true'
