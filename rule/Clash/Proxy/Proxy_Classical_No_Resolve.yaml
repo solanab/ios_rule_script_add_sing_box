@@ -1,13 +1,13 @@
 # NAME: Proxy
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2025-07-28 02:07:58
+# UPDATED: 2025-08-01 02:08:05
 # DOMAIN: 9
 # DOMAIN-KEYWORD: 26
-# DOMAIN-SUFFIX: 6507
+# DOMAIN-SUFFIX: 6509
 # IP-CIDR: 93
 # IP-CIDR6: 4
-# TOTAL: 6639
+# TOTAL: 6641
 payload:
   - DOMAIN,api.waqi.info
   - DOMAIN,aqi.aqicn.org
@@ -3297,6 +3297,7 @@ payload:
   - DOMAIN-SUFFIX,lsxszzg.com
   - DOMAIN-SUFFIX,ltn.com.tw
   - DOMAIN-SUFFIX,luckydesigner.space
+  - DOMAIN-SUFFIX,ludepress.com
   - DOMAIN-SUFFIX,luke54.com
   - DOMAIN-SUFFIX,luke54.org
   - DOMAIN-SUFFIX,lupm.org
@@ -6003,6 +6004,7 @@ payload:
   - DOMAIN-SUFFIX,wailaike.net
   - DOMAIN-SUFFIX,wainao.me
   - DOMAIN-SUFFIX,waiwaier.com
+  - DOMAIN-SUFFIX,walletconnect.com
   - DOMAIN-SUFFIX,wallmama.com
   - DOMAIN-SUFFIX,wallornot.org
   - DOMAIN-SUFFIX,wallpapercasa.com
