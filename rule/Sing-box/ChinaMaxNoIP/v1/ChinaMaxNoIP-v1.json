@@ -3,13 +3,13 @@
   "rules": [
     {
       "domain": [
-        "alibaba",
-        "tmall",
         "cn",
         "ms",
+        "alibaba",
         "citic",
         "icbc",
         "sohu",
+        "tmall",
         "unicom",
         "wang",
         "xn--1qqw23a",
@@ -45,13 +45,13 @@
         "xn--zfr164b"
       ],
       "domain_suffix": [
-        ".alibaba",
-        ".tmall",
         ".cn",
         ".ms",
+        ".alibaba",
         ".citic",
         ".icbc",
         ".sohu",
+        ".tmall",
         ".unicom",
         ".wang",
         ".xn--1qqw23a",
