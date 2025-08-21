@@ -3,18 +3,18 @@
   "rules": [
     {
       "domain": [
+        "alibaba",
+        "tmall",
         "cn",
         "ms",
-        "alibaba",
         "citic",
-        "icbc",
         "sohu",
-        "tmall",
         "unicom",
         "wang",
         "xn--1qqw23a",
         "xn--3bst00m",
         "xn--3ds443g",
+        "xn--55qw42g",
         "xn--55qx5d",
         "xn--5tzm5g",
         "xn--6frz82g",
@@ -42,21 +42,22 @@
         "xn--vhquv",
         "xn--vuq861b",
         "xn--xhq521b",
-        "xn--zfr164b"
+        "xn--zfr164b",
+        "icbc"
       ],
       "domain_suffix": [
+        ".alibaba",
+        ".tmall",
         ".cn",
         ".ms",
-        ".alibaba",
         ".citic",
-        ".icbc",
         ".sohu",
-        ".tmall",
         ".unicom",
         ".wang",
         ".xn--1qqw23a",
         ".xn--3bst00m",
         ".xn--3ds443g",
+        ".xn--55qw42g",
         ".xn--55qx5d",
         ".xn--5tzm5g",
         ".xn--6frz82g",
@@ -84,7 +85,8 @@
         ".xn--vhquv",
         ".xn--vuq861b",
         ".xn--xhq521b",
-        ".xn--zfr164b"
+        ".xn--zfr164b",
+        ".icbc"
       ]
     }
   ]
