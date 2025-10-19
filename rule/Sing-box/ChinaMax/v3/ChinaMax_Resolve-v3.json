@@ -3,12 +3,12 @@
   "rules": [
     {
       "domain": [
+        "alipay",
         "alibaba",
         "taobao",
         "tmall",
         "cn",
         "ms",
-        "alipay",
         "baidu",
         "citic",
         "sohu",
@@ -49,12 +49,12 @@
         "icbc"
       ],
       "domain_suffix": [
+        ".alipay",
         ".alibaba",
         ".taobao",
         ".tmall",
         ".cn",
         ".ms",
-        ".alipay",
         ".baidu",
         ".citic",
         ".sohu",
@@ -19117,6 +19117,7 @@
         "2a13:a5c7:3301::/48",
         "2a13:a5c7:3304::/48",
         "2a13:a5c7:3306::/48",
+        "2a13:a5c7:3400::/44",
         "2a13:aac4::/32",
         "2a13:b487:1b86::/47",
         "2a13:b487:1b88::/47",
