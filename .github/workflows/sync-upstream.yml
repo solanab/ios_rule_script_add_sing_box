@@ -16,6 +16,27 @@ jobs:
     if: github.repository == 'solanab/ios_rule_script_add_sing_box'
     runs-on: ubuntu-latest
     steps:
+      - name: Validate PAT Token
+        env:
+          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
+        run: |
+          if [ -z "$PAT_TOKEN" ]; then
+            echo "::error::PAT_TOKEN secret is not configured. Please add it in Settings → Secrets and variables → Actions"
+            exit 1
+          fi
+
+          # Check token validity and expiration
+          response=$(curl -s -w "\n%{http_code}" -H "Authorization: token $PAT_TOKEN" https://api.github.com/user)
+          http_code=$(echo "$response" | tail -n1)
+          body=$(echo "$response" | sed '$d')
+
+          if [ "$http_code" != "200" ]; then
+            echo "::error::PAT_TOKEN is invalid or expired (HTTP $http_code). Please update it in Settings → Secrets and variables → Actions"
+            exit 1
+          fi
+
+          echo "✓ PAT_TOKEN is valid"
+
       - name: Checkout Repository
         uses: actions/checkout@v4
         with:
