@@ -3,12 +3,12 @@
   "rules": [
     {
       "domain": [
+        "alipay",
         "alibaba",
         "taobao",
         "tmall",
         "cn",
         "ms",
-        "alipay",
         "baidu",
         "citic",
         "icbc",
@@ -49,12 +49,12 @@
         "xn--zfr164b"
       ],
       "domain_suffix": [
+        ".alipay",
         ".alibaba",
         ".taobao",
         ".tmall",
         ".cn",
         ".ms",
-        ".alipay",
         ".baidu",
         ".citic",
         ".icbc",
