@@ -1,13 +1,13 @@
 # NAME: ChinaTest
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2026-04-14 02:28:16
+# UPDATED: 2026-04-16 02:28:16
 # DOMAIN: 136
 # DOMAIN-KEYWORD: 9
-# DOMAIN-SUFFIX: 118236
+# DOMAIN-SUFFIX: 118248
 # IP-CIDR: 11
 # IP-CIDR6: 4
-# TOTAL: 118396
+# TOTAL: 118408
 payload:
   - 'analytics.strava.com'
   - 'blzddist1-a.akamaihd.net'
@@ -15193,6 +15193,7 @@ payload:
   - '+.ailvxing.com'
   - '+.aim-ec.com'
   - '+.aimaker.space'
+  - '+.aimap.com'
   - '+.aimatech.com'
   - '+.aimatrix.ai'
   - '+.aimcx.com'
@@ -20608,6 +20609,7 @@ payload:
   - '+.bjfqy.com'
   - '+.bjfriendshiphotel.com'
   - '+.bjfsali.com'
+  - '+.bjftfy.com'
   - '+.bjfzst.com'
   - '+.bjgas.com'
   - '+.bjgasgh.com'
@@ -24352,6 +24354,7 @@ payload:
   - '+.cetgps.com'
   - '+.cethik.com'
   - '+.cetkmh.com'
+  - '+.cetsteam.com'
   - '+.cetzig.com'
   - '+.ceultimate.com'
   - '+.ceve-market.org'
@@ -37545,6 +37548,7 @@ payload:
   - '+.evpartner.com'
   - '+.evpowergroup.com'
   - '+.evtcn.com'
+  - '+.evtrust.com'
   - '+.evyy.net'
   - '+.evzhidao.com'
   - '+.evznl.org'
@@ -39452,6 +39456,7 @@ payload:
   - '+.fk100.com'
   - '+.fkask.net'
   - '+.fkblog.org'
+  - '+.fkbuff.com'
   - '+.fkcaijing.com'
   - '+.fkdex.com'
   - '+.fkdmg.com'
@@ -41079,6 +41084,7 @@ payload:
   - '+.gangqinxiansheng.com'
   - '+.gangshenglian.com'
   - '+.gangtise.com'
+  - '+.gangwan.com'
   - '+.gangyu.org'
   - '+.gangyuan.com'
   - '+.ganhao.vip'
@@ -50385,6 +50391,7 @@ payload:
   - '+.hivictor.net'
   - '+.hiwafer.com'
   - '+.hiwaysemi.com'
+  - '+.hiwayslaw.com'
   - '+.hiwbb.com'
   - '+.hiwechats.com'
   - '+.hiweixiu.com'
@@ -61789,6 +61796,7 @@ payload:
   - '+.jxxdxy.com'
   - '+.jxxhdn.com'
   - '+.jxxhsd.com'
+  - '+.jxxinzhe.com'
   - '+.jxxnyqc.com'
   - '+.jxxs.net'
   - '+.jxycqy.com'
@@ -65449,6 +65457,7 @@ payload:
   - '+.leiboyiqi.com'
   - '+.leidacj.com'
   - '+.leidianip.com'
+  - '+.leigodjsq.com'
   - '+.leihetg.com'
   - '+.leihuo.net'
   - '+.leijue.net'
@@ -74909,6 +74918,7 @@ payload:
   - '+.nnbdfyy.com'
   - '+.nnbnutritionchina.com'
   - '+.nnboao.com'
+  - '+.nnbooster.com'
   - '+.nnboyi.com'
   - '+.nnbsjyk.com'
   - '+.nnbtl.com'
@@ -93945,6 +93955,7 @@ payload:
   - '+.tencentcloudbase.com'
   - '+.tencentcloudbase.net'
   - '+.tencentcloudcore.com'
+  - '+.tencentcloudcs.com'
   - '+.tencentcloudga.com'
   - '+.tencentcloudga001.com'
   - '+.tencentcloudga001.net'
@@ -99598,6 +99609,7 @@ payload:
   - '+.waibao12333.com'
   - '+.waibaodashi.com'
   - '+.waibou.com'
+  - '+.waifushangcheng.com'
   - '+.waig8.com'
   - '+.waigamer.com'
   - '+.waigf.com'
