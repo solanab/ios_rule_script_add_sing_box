@@ -7,6 +7,7 @@
         "ms",
         "alibaba",
         "citic",
+        "icbc",
         "sohu",
         "tmall",
         "unicom",
@@ -42,14 +43,14 @@
         "xn--vhquv",
         "xn--vuq861b",
         "xn--xhq521b",
-        "xn--zfr164b",
-        "icbc"
+        "xn--zfr164b"
       ],
       "domain_suffix": [
         ".cn",
         ".ms",
         ".alibaba",
         ".citic",
+        ".icbc",
         ".sohu",
         ".tmall",
         ".unicom",
@@ -85,8 +86,7 @@
         ".xn--vhquv",
         ".xn--vuq861b",
         ".xn--xhq521b",
-        ".xn--zfr164b",
-        ".icbc"
+        ".xn--zfr164b"
       ]
     }
   ]
