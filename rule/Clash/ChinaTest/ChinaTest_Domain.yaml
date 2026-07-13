@@ -1,13 +1,13 @@
 # NAME: ChinaTest
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2026-07-12 02:52:36
+# UPDATED: 2026-07-14 03:19:45
 # DOMAIN: 117
 # DOMAIN-KEYWORD: 9
-# DOMAIN-SUFFIX: 111919
+# DOMAIN-SUFFIX: 111929
 # IP-CIDR: 11
 # IP-CIDR6: 4
-# TOTAL: 112060
+# TOTAL: 112070
 payload:
   - 'analytics.strava.com'
   - 'blzddist1-a.akamaihd.net'
@@ -13660,6 +13660,7 @@ payload:
   - '+.ad77.com'
   - '+.ad778.com'
   - '+.ada-post.com'
+  - '+.adacpp.com'
   - '+.adamahf.com'
   - '+.adamcdn.com'
   - '+.adamcoder.com'
@@ -27600,6 +27601,7 @@ payload:
   - '+.color-measure.com'
   - '+.color365.com'
   - '+.colorbird.com'
+  - '+.colorfulclouds.com'
   - '+.colorfulclouds.net'
   - '+.colorfulltech.net'
   - '+.colorimeter.com'
@@ -33503,6 +33505,7 @@ payload:
   - '+.duoyi.com'
   - '+.duoying.com'
   - '+.duoyinsu.com'
+  - '+.duoyiwangluo.com'
   - '+.duoyoumi.com'
   - '+.duozhi.com'
   - '+.duozhuayu.com'
@@ -41891,6 +41894,7 @@ payload:
   - '+.gtetern.com'
   - '+.gtfund.com'
   - '+.gtg56.com'
+  - '+.gtgjtrip.com'
   - '+.gtgqw.com'
   - '+.gtht.com'
   - '+.gthzc.com'
@@ -60188,6 +60192,7 @@ payload:
   - '+.klhpw.com'
   - '+.klhuyan.com'
   - '+.klicen.com'
+  - '+.kling-ai.com'
   - '+.klingai.com'
   - '+.klingxai.com'
   - '+.klinlee.com'
@@ -62440,6 +62445,7 @@ payload:
   - '+.leyoo.com'
   - '+.leyoujia.com'
   - '+.leyu.com'
+  - '+.leyuansu.com'
   - '+.leyue100.com'
   - '+.leyuglobal.com'
   - '+.leyun365.com'
@@ -82093,6 +82099,7 @@ payload:
   - '+.shedongyun.com'
   - '+.shedoor.com'
   - '+.shedunews.com'
+  - '+.shedunews.net'
   - '+.sheec-tencentclb.cloud'
   - '+.sheec-tencentclb.com'
   - '+.sheec-tencentclb.net'
@@ -99572,6 +99579,7 @@ payload:
   - '+.xiaomei.cc'
   - '+.xiaomeiti.com'
   - '+.xiaomeng1235.com'
+  - '+.xiaomengai.com'
   - '+.xiaomi.hk'
   - '+.xiaomi.org'
   - '+.xiaomi.tw'
@@ -103622,6 +103630,7 @@ payload:
   - '+.ygct.com'
   - '+.ygdatabase.com'
   - '+.ygdl.com'
+  - '+.ygduoyi.com'
   - '+.yge.me'
   - '+.ygeer.com'
   - '+.ygei.com'
@@ -110858,6 +110867,7 @@ payload:
   - '+.zmsq.com'
   - '+.zmssh.com'
   - '+.zmtpc.com'
+  - '+.zmtqsh.com'
   - '+.zmtquan.com'
   - '+.zmufivehospital.com'
   - '+.zmumu.com'
