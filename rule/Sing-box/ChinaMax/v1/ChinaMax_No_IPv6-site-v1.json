@@ -3,18 +3,19 @@
   "rules": [
     {
       "domain": [
-        "alibaba",
-        "taobao",
-        "tmall",
+        "alipay",
         "cn",
         "ms",
-        "alipay",
+        "alibaba",
         "anquan",
         "baidu",
         "citic",
+        "icbc",
         "shouji",
         "sina",
         "sohu",
+        "taobao",
+        "tmall",
         "unicom",
         "wang",
         "weibo",
@@ -52,22 +53,22 @@
         "xn--vuq861b",
         "xn--xhq521b",
         "xn--zfr164b",
-        "yun",
-        "icbc"
+        "yun"
       ],
       "domain_suffix": [
-        ".alibaba",
-        ".taobao",
-        ".tmall",
+        ".alipay",
         ".cn",
         ".ms",
-        ".alipay",
+        ".alibaba",
         ".anquan",
         ".baidu",
         ".citic",
+        ".icbc",
         ".shouji",
         ".sina",
         ".sohu",
+        ".taobao",
+        ".tmall",
         ".unicom",
         ".wang",
         ".weibo",
@@ -105,8 +106,7 @@
         ".xn--vuq861b",
         ".xn--xhq521b",
         ".xn--zfr164b",
-        ".yun",
-        ".icbc"
+        ".yun"
       ]
     }
   ]
