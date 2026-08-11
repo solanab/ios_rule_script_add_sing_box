@@ -8,6 +8,7 @@
         "alibaba",
         "anquan",
         "citic",
+        "icbc",
         "shouji",
         "sina",
         "sohu",
@@ -48,8 +49,7 @@
         "xn--vuq861b",
         "xn--xhq521b",
         "xn--zfr164b",
-        "yun",
-        "icbc"
+        "yun"
       ],
       "domain_suffix": [
         ".cn",
@@ -57,6 +57,7 @@
         ".alibaba",
         ".anquan",
         ".citic",
+        ".icbc",
         ".shouji",
         ".sina",
         ".sohu",
@@ -97,8 +98,7 @@
         ".xn--vuq861b",
         ".xn--xhq521b",
         ".xn--zfr164b",
-        ".yun",
-        ".icbc"
+        ".yun"
       ],
       "ip_cidr": [
         "0.0.0.0/32",
