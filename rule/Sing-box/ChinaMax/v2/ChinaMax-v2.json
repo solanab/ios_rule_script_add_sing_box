@@ -3,11 +3,9 @@
   "rules": [
     {
       "domain": [
-        "alibaba",
-        "taobao",
-        "tmall",
         "cn",
         "ms",
+        "alibaba",
         "alipay",
         "anquan",
         "baidu",
@@ -16,6 +14,8 @@
         "shouji",
         "sina",
         "sohu",
+        "taobao",
+        "tmall",
         "unicom",
         "wang",
         "weibo",
@@ -56,11 +56,9 @@
         "yun"
       ],
       "domain_suffix": [
-        ".alibaba",
-        ".taobao",
-        ".tmall",
         ".cn",
         ".ms",
+        ".alibaba",
         ".alipay",
         ".anquan",
         ".baidu",
@@ -69,6 +67,8 @@
         ".shouji",
         ".sina",
         ".sohu",
+        ".taobao",
+        ".tmall",
         ".unicom",
         ".wang",
         ".weibo",
