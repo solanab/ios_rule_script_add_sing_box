@@ -3,16 +3,16 @@
   "rules": [
     {
       "domain": [
-        "alibaba",
-        "tmall",
         "cn",
         "ms",
+        "alibaba",
         "anquan",
         "citic",
         "icbc",
         "shouji",
         "sina",
         "sohu",
+        "tmall",
         "unicom",
         "wang",
         "xihuan",
@@ -52,16 +52,16 @@
         "yun"
       ],
       "domain_suffix": [
-        ".alibaba",
-        ".tmall",
         ".cn",
         ".ms",
+        ".alibaba",
         ".anquan",
         ".citic",
         ".icbc",
         ".shouji",
         ".sina",
         ".sohu",
+        ".tmall",
         ".unicom",
         ".wang",
         ".xihuan",
